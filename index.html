@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Dashboard</title>
+
+    <style>
+        body{
+            background:#0f172a;
+            color:white;
+            font-family:Arial;
+            padding:30px;
+        }
+
+        .card{
+            background:#1e293b;
+            padding:20px;
+            margin:10px;
+            border-radius:12px;
+        }
+
+        .online{
+            color:#00ff88;
+        }
+
+        .offline{
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🤖 My Bots Dashboard</h1>
+
+{% for bot in bots %}
+
+<div class="card">
+
+<h2>{{ bot.name }}</h2>
+
+{% if bot.status == "online" %}
+<p class="online">ONLINE</p>
+{% else %}
+<p class="offline">OFFLINE</p>
+{% endif %}
+
+</div>
+
+{% endfor %}
+
+</body>
+</html>
